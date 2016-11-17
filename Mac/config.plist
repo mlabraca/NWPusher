@@ -2,8 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>payload</key>
-	<string>{&quot;aps&quot;:{&quot;alert&quot;:&quot;Testing.. (0)&quot;,&quot;badge&quot;:1,&quot;sound&quot;:&quot;default&quot;}}</string>
+	<key>payloads</key>
+	<dict>
+		<key>default push</key>
+		<string>{&quot;aps&quot;:{&quot;alert&quot;:&quot;Testing.. (0)&quot;,&quot;badge&quot;:1,&quot;sound&quot;:&quot;default&quot;}}</string>
+		<key>homes push</key>
+		<string>{&quot;pg&quot;:1,&quot;c&quot;:&quot;es&quot;,&quot;uid&quot;:&quot;testPushHomes&quot;,&quot;aps&quot;:{&quot;alert&quot;:&quot;push SERP notification&quot;,&quot;sound&quot;:&quot;default&quot;,&quot;badge&quot;:0,&quot;content-available&quot;:1}}</string>
+		<key>homes push filters</key>
+		<string>{&quot;pg&quot;:1,&quot;c&quot;:&quot;es&quot;,&quot;uid&quot;:&quot;testPushHomesFilters&quot;,&quot;v&quot;:1,&quot;s&quot;:0,&quot;aps&quot;:{&quot;alert&quot;:&quot;push SERP notification&quot;,&quot;sound&quot;:&quot;default&quot;,&quot;badge&quot;:0,&quot;content-available&quot;:1}}</string>
+		<key>homes-map push</key>
+		<string>{&quot;pg&quot;:1,&quot;c&quot;:&quot;es&quot;,&quot;uid&quot;:&quot;testPushHomesMaps&quot;,&quot;v&quot;:1,&quot;s&quot;:0,&quot;aps&quot;:{&quot;alert&quot;:&quot;push MAP notification&quot;,&quot;sound&quot;:&quot;default&quot;,&quot;badge&quot;:0,&quot;content-available&quot;:1}}</string>
+		<key>cars push</key>
+		<string>{&quot;pg&quot;:1,&quot;c&quot;:&quot;es&quot;,&quot;uid&quot;:&quot;testPushCars&quot;,&quot;v&quot;:1,&quot;s&quot;:0,&quot;aps&quot;:{&quot;alert&quot;:&quot;push SERP notification&quot;,&quot;sound&quot;:&quot;default&quot;,&quot;badge&quot;:0,&quot;content-available&quot;:1}}</string>
+		<key>cars push filters</key>
+		<string>{&quot;pg&quot;:1,&quot;c&quot;:&quot;es&quot;,&quot;uid&quot;:&quot;testPushCarsFilters&quot;,&quot;v&quot;:1,&quot;s&quot;:0,&quot;aps&quot;:{&quot;alert&quot;:&quot;push SERP notification&quot;,&quot;sound&quot;:&quot;default&quot;,&quot;badge&quot;:0,&quot;content-available&quot;:1}}</string>
+		<key>jobs push</key>
+		<string>{&quot;pg&quot;:1,&quot;c&quot;:&quot;es&quot;,&quot;uid&quot;:&quot;testPushJobs&quot;,&quot;v&quot;:1,&quot;s&quot;:0,&quot;aps&quot;:{&quot;alert&quot;:&quot;push SERP notification&quot;,&quot;sound&quot;:&quot;default&quot;,&quot;badge&quot;:0,&quot;content-available&quot;:1}}</string>
+		<key>jobs push filters</key>
+		<string>{&quot;pg&quot;:1,&quot;c&quot;:&quot;es&quot;,&quot;uid&quot;:&quot;testPushJobsFilters&quot;,&quot;v&quot;:1,&quot;s&quot;:0,&quot;aps&quot;:{&quot;alert&quot;:&quot;push SERP notification&quot;,&quot;sound&quot;:&quot;default&quot;,&quot;badge&quot;:0,&quot;content-available&quot;:1}}</string>
+	</dict>
 	<key>identifiers</key>
 	<dict>
 		<key>com.example.app</key>

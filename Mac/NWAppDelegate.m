@@ -8,6 +8,12 @@
 #import "NWAppDelegate.h"
 #import <PusherKit/PusherKit.h>
 
+//If plist is changed, remove the old one in
+//  rm /Users/miguelangel/Library/Developer/Xcode/DerivedData/Build/Products/Debug/Pusher.app/Contents/Resources/config.plist
+//  rm /Users/miguelangel/Library/Pusher/config.plist
+//  device token for iPhone 6 plus is:
+//  b7a784dd7d2890c68f2a077f7dbf0cbd943df156271b4904235930d84ced96a5
+
 @interface NWAppDelegate () <NWHubDelegate> @end
 
 @implementation NWAppDelegate {
@@ -21,6 +27,7 @@
     IBOutlet NSButton *_reconnectButton;
     IBOutlet NSPopUpButton *_expiryPopup;
     IBOutlet NSPopUpButton *_priorityPopup;
+    IBOutlet NSPopUpButton *_pushTypePopup;
     IBOutlet NSScrollView *_logScroll;
     IBOutlet NSButton *_sanboxCheckBox;
 
@@ -49,13 +56,8 @@
     [self loadConfig];
     [self updateCertificatePopup];
     
-    NSString *payload = [_config valueForKey:@"payload"];
-    _payloadField.string = payload.length ? payload : @"";
-    _payloadField.font = [NSFont fontWithName:@"Monaco" size:10];
-    _payloadField.enabledTextCheckingTypes = 0;
-    _logField.enabledTextCheckingTypes = 0;
-    [self updatePayloadCounter];
-    NWLogInfo(@"");
+    [self preparePushTypeButton];
+    [self initializePayLoad];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification
@@ -69,6 +71,44 @@
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)application
 {
     return YES;
+}
+
+#pragma mark - PushType button and payload
+
+- (void) initializePayLoad
+{
+    [self setPayloadTextWithContent:_pushTypePopup.selectedItem.title];
+    _payloadField.font = [NSFont fontWithName:@"Monaco" size:10];
+    _payloadField.enabledTextCheckingTypes = 0;
+    _logField.enabledTextCheckingTypes = 0;
+    [self updatePayloadCounter];
+    NWLogInfo(@"");
+}
+
+- (void) setPayloadTextWithContent:(NSString *)content
+{
+    NSString *selectedPayload = content;
+    NSString *payload = [[_config valueForKey:@"payloads"] objectForKey:selectedPayload];
+    _payloadField.string = payload.length ? payload : @"";
+}
+
+- (void) preparePushTypeButton
+{
+    [_pushTypePopup removeAllItems];
+    [_pushTypePopup addItemWithTitle:@"default push"];
+    [_pushTypePopup addItemWithTitle:@"homes push"];
+    [_pushTypePopup addItemWithTitle:@"homes push filters"];
+    [_pushTypePopup addItemWithTitle:@"homes-map push"];
+    [_pushTypePopup addItemWithTitle:@"cars push"];
+    [_pushTypePopup addItemWithTitle:@"cars push filters"];
+    [_pushTypePopup addItemWithTitle:@"jobs push"];
+    [_pushTypePopup addItemWithTitle:@"jobs push filters"];
+}
+
+- (IBAction)pushTypeChanged:(NSPopUpButton *)sender
+{
+    [self setPayloadTextWithContent:sender.selectedItem.title];
+    [self updatePayloadCounter];
 }
 
 #pragma mark - Events
