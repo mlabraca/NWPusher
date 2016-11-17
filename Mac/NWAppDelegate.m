@@ -9,10 +9,8 @@
 #import <PusherKit/PusherKit.h>
 
 //If plist is changed, remove the old one in
-//  rm /Users/miguelangel/Library/Developer/Xcode/DerivedData/Build/Products/Debug/Pusher.app/Contents/Resources/config.plist
-//  rm /Users/miguelangel/Library/Pusher/config.plist
-//  device token for iPhone 6 plus is:
-//  b7a784dd7d2890c68f2a077f7dbf0cbd943df156271b4904235930d84ced96a5
+//  rm ~/Library/Developer/Xcode/DerivedData/Build/Products/Debug/Pusher.app/Contents/Resources/config.plist
+//  rm ~/Library/Pusher/config.plist
 
 @interface NWAppDelegate () <NWHubDelegate> @end
 
