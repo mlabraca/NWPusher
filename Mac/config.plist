@@ -11,7 +11,7 @@
 		<key>homes push filters</key>
 		<string>{&quot;pg&quot;:1,&quot;c&quot;:&quot;es&quot;,&quot;uid&quot;:&quot;testPushHomesFilters&quot;,&quot;v&quot;:1,&quot;s&quot;:0,&quot;aps&quot;:{&quot;alert&quot;:&quot;push SERP notification&quot;,&quot;sound&quot;:&quot;default&quot;,&quot;badge&quot;:0,&quot;content-available&quot;:1}}</string>
 		<key>homes-map push</key>
-		<string>{&quot;pg&quot;:1,&quot;c&quot;:&quot;es&quot;,&quot;uid&quot;:&quot;testPushHomesMaps&quot;,&quot;v&quot;:1,&quot;s&quot;:0,&quot;aps&quot;:{&quot;alert&quot;:&quot;push MAP notification&quot;,&quot;sound&quot;:&quot;default&quot;,&quot;badge&quot;:0,&quot;content-available&quot;:1}}</string>
+		<string>{&quot;pg&quot;:2,&quot;c&quot;:&quot;es&quot;,&quot;uid&quot;:&quot;testPushHomesMaps&quot;,&quot;v&quot;:1,&quot;s&quot;:0,&quot;aps&quot;:{&quot;alert&quot;:&quot;push MAP notification&quot;,&quot;sound&quot;:&quot;default&quot;,&quot;badge&quot;:0,&quot;content-available&quot;:1}}</string>
 		<key>cars push</key>
 		<string>{&quot;pg&quot;:1,&quot;c&quot;:&quot;es&quot;,&quot;uid&quot;:&quot;testPushCars&quot;,&quot;v&quot;:1,&quot;s&quot;:0,&quot;aps&quot;:{&quot;alert&quot;:&quot;push SERP notification&quot;,&quot;sound&quot;:&quot;default&quot;,&quot;badge&quot;:0,&quot;content-available&quot;:1}}</string>
 		<key>cars push filters</key>
